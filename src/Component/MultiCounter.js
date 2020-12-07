@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CounterGroup from './CounterGroup'
+import CounterSizeGerator from './CounterSizeGenerator';
+import CounterGroupSum from './CounterGroupSum';
 
 export default class MultiCounter extends Component {
     constructor(props){
@@ -8,20 +10,22 @@ export default class MultiCounter extends Component {
         this.state = {
             size: 0
         };
+
     }
-    onChagne = (event) => {
-        console.log(event.target.value);
-        let number = event.target.value.length > 0 ? parseInt(event.target.value) : 0;
-        this.setState({size: number});
+
+    getCounterSize=(data_from_child)=>{
+        this.setState({size: data_from_child});
+        console.log(data_from_child);
     }
+    
     render(){
-        const size = 0;
         return (
             <div>
-              <input type = "number" value={this.state.size} onChange= {this.onChagne}></input>
+              <CounterSizeGerator functionCallFromParent={this.getCounterSize.bind(this)}/>
+              <CounterGroupSum />
               <CounterGroup size={this.state.size}/>
+        <span>My state size is: {this.state.size}</span>
             </div>
-        
         );
     }
 }
