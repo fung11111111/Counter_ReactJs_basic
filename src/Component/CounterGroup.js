@@ -24,7 +24,6 @@ export default class CounterGroup extends Component {
         this.setState({restCounter: restCounter});
     }
 
-    //clear count value when size changed
     componentDidUpdate(prevProps, prevState){
         if(prevProps.size !== this.props.size){
            this.props.updateSum(0);
