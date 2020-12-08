@@ -13,8 +13,8 @@ export default class CounterSizeGenerator extends Component {
     updateSize = (event) => {
         let number = event.target.value.length > 0 ? parseInt(event.target.value) : 0;
         this.setState({ size: number });
-
-        this.props.generateSize(number);
+        this.props.updateCounterSize(number);
+        this.props.resetSum(0);
     }
 
     render() {

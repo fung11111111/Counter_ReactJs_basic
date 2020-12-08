@@ -11,15 +11,13 @@ export default class Counter extends Component {
     }
 
     onIncrease = () => {
-       this.setState((prevState) => ({number: prevState.number + 1}))
-       this.props.calculateSum(1);
-       //this.props.isReseted(1);
+       this.setState((prevState) => ({number: prevState.number + 1}))       
+       this.props.increase();
     };
 
     onDecrease = () => {
         this.setState((prevState) => ({number: prevState.number - 1}))
-        this.props.calculateSum(-1);
-       // this.props.isReseted(1);
+        this.props.decrease();
     };
 
     componentDidUpdate(prevProps){
