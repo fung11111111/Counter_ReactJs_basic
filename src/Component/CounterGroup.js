@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import CounterContainer from '../Container/CounterContainer';
-import Counter from './Counter'
+
 
 export default class CounterGroup extends Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     initArraySize = (size) => {
         return Array.from(Array(size).keys())
@@ -17,12 +13,6 @@ export default class CounterGroup extends Component {
         this.props.updateSum(newSum);
     }
 
-    componentDidUpdate(prevProps, prevState){
-        if(prevProps.size !== this.props.size){
-           this.props.updateSum(0);
-        }
-    }
-
     render() {
         const size = this.props.size;
         const initArraySize = this.initArraySize(size);
@@ -30,7 +20,7 @@ export default class CounterGroup extends Component {
             <div>
                 {
                     initArraySize.map((values) =>
-                        <CounterContainer key={values}/>
+                        <CounterContainer key={values} iniCounter={this.props.size}/>
                     )
                 }
             </div>

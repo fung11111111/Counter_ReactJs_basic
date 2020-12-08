@@ -21,8 +21,8 @@ export default class Counter extends Component {
     };
 
     componentDidUpdate(prevProps){
-        if(prevProps.size !== this.props.size){
-           this.setState({number:0});
+        if(prevProps.iniCounter !== this.props.iniCounter){
+            this.setState({number: 0});
         }
     }
 

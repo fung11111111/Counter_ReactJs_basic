@@ -1,4 +1,4 @@
-import {INCREASE, DECREASE, RESETSUM, UPDATE_COUNTER_SIZE} from './ActionTypes'
+import {INCREASE, DECREASE, RESET, UPDATE_COUNTER_SIZE} from './ActionTypes'
 
 
 export const increaseSum = () => {
@@ -9,8 +9,8 @@ export const decreaseSum = () => {
     return {type: DECREASE};
 }
 
-export const resetSum = ()=> {
-    return {type: RESETSUM};
+export const reset = ()=> {
+    return {type: RESET};
 }
 
 export const updateCounterSize = (size) => {
