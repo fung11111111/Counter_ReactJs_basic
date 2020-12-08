@@ -21,14 +21,12 @@ export default class MultiCounter extends Component {
         this.setState({ sum: calculatedSum });
     }
 
-    getValueFromCounter
     render() {
         return (
             <div>
                 <CounterSizeGerator generateSize={this.generateSize} />
                 <CounterGroupSum sum={this.state.sum} />
                 <CounterGroup size={this.state.size} updateSum={this.updateSum} sum={this.state.sum}/>
-                <span>My state size is: {this.state.size}</span>
             </div>
         );
     }

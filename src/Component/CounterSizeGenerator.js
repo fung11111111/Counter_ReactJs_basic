@@ -11,7 +11,6 @@ export default class CounterSizeGenerator extends Component {
     }
 
     updateSize = (event) => {
-        console.log(event.target.value);
         let number = event.target.value.length > 0 ? parseInt(event.target.value) : 0;
         this.setState({ size: number });
 
@@ -19,10 +18,6 @@ export default class CounterSizeGenerator extends Component {
     }
 
     render() {
-        if (this.props.iniCounter){
-            this.setState({number: 0});
-            console.log(this.props.iniCounter);
-        }
         return (
             <div>
                 <label>Size:</label>
