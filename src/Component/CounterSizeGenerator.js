@@ -19,6 +19,10 @@ export default class CounterSizeGenerator extends Component {
     }
 
     render() {
+        if (this.props.iniCounter){
+            this.setState({number: 0});
+            console.log(this.props.iniCounter);
+        }
         return (
             <div>
                 <label>Size:</label>
