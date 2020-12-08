@@ -4,27 +4,31 @@ import CounterSizeGerator from './CounterSizeGenerator';
 import CounterGroupSum from './CounterGroupSum';
 
 export default class MultiCounter extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
-            size: 0
+            size: 0,
+            sum: 0
         };
-
     }
 
-    getCounterSize=(data_from_child)=>{
-        this.setState({size: data_from_child});
-        console.log(data_from_child);
+    generateSize = (generatedsize) => {
+        this.setState({ size: generatedsize });
     }
-    
-    render(){
+
+    updateSum = (calculatedSum) => {
+        this.setState({ sum: calculatedSum });
+    }
+
+    getValueFromCounter
+    render() {
         return (
             <div>
-              <CounterSizeGerator functionCallFromParent={this.getCounterSize.bind(this)}/>
-              <CounterGroupSum />
-              <CounterGroup size={this.state.size}/>
-        <span>My state size is: {this.state.size}</span>
+                <CounterSizeGerator generateSize={this.generateSize} />
+                <CounterGroupSum sum={this.state.sum} />
+                <CounterGroup size={this.state.size} updateSum={this.updateSum} sum={this.state.sum}/>
+                <span>My state size is: {this.state.size}</span>
             </div>
         );
     }
